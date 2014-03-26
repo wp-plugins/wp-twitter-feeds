@@ -1,11 +1,11 @@
 === Plugin Name ===
-Contributors: VivacityInfotech
+Contributors: vivacityinfotech.jaipur
 Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter widget,live tweets, live twitter tweets, tweets, twitter, twitter time line, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
 
-WP Twitter Feeds - A simple widget which lets you add your latest tweets in widget areas.Get started in just a few clicks and use the provided Widget to easily display your Tweets on your website.
+WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
 
 == Description ==
 
@@ -43,7 +43,16 @@ Installation consists of following steps:
 3. Place the "WP Twitter Tweets" Widget on your sidebar and add twitter username with API details of Twitter.
 
 
-= Creating a Twitter Application =
+= Rate Us / Feedback =
+
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
+
+Want More?
+
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
+== Frequently Asked Questions ==
+
+= How to create a Twitter Application =
 
 1. Visit the Twitter Developers Site: The first thing you need to do is head on down to dev.twitter.com. In order to create an account, all you need to do is click on the “Sign In” link at the top right.
 
@@ -64,15 +73,6 @@ Once you’ve done this, make sure you’ve read the “Developer Rules Of The R
 6. Create Your Access Token.
 
 7. Make a note of your OAuth Settings.
-
-
-= Rate Us / Feedback =
-
-Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
-
-Want More?
-
-If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
 == Changelog ==
 
