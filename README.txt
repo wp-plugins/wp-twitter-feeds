@@ -1,64 +1,78 @@
 === Plugin Name ===
-Contributors: VivacityInfotech
-Tags: Twitter, Feeds, Tweets, Twitter-OAuth, social feeds
+Contributors: vivacityinfotech.jaipur
+Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter widget,live tweets, live twitter tweets, tweets, twitter, twitter time line, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
 
-WP Twitter Feeds - Displays Tweets on your Wordpress site using the new Twitter OAuth API v1.1. The Tweets will be displayed even when you are not connected as,they're backed up!
+WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
 
 == Description ==
 
-Displays latest tweets from your Twitter account using Twitter oAuth API 1.1.
+An easy Twitter feeds widget that provides facility to display twitter tweets on your website using the latest Twitter 1.1 API.A simple widget which lets you add your latest tweets in widget areas.Get started in just a few clicks and use the provided Widget to easily display your Tweets on your website.
+
+Now you don`t need to copy and paste the code from twitter with your settings anymore, just install the plugin and set the options.
+By option page, you can define the duration of fade effect, the number of tweet to see and other things.
+
+The "WP Twitter Tweets" Widget will never require your Twitter password, because it based on Open Authentication (OAuth) keys and secrets, that you will get by creating your application at Twitter. It gets all your required data from API. Incase you change your password, you won’t need to update your Widget in your Blog.
+
 
 = Features =
+
+    *Easy install
+    *Very easy to configure.
+    *Display Tweets with a Widget.
+    *You can choose to show a profile image, border color and much more with your Tweets.
+    *Multiple instance so you can use Twitter widget multiple places.
+    *Different color Options.
+    *Lightweight and loading fast
+    *Set maximum number of tweets to display
+    *Turn on/off displaying avatar
+    *Supports v1.1 of the Twitter API
+
+== Available Languages ==
+
+    English
 
 == Installation ==
 
 Installation consists of following steps:
 
-1. Upload plugin to the '/wp-content/plugins/' directory
+1. Upload "WP Twitter Tweets" to the /wp-content/plugins/ directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Add the Widget to your page in sidebar and update the required details
-4. Click Save
-5. Note: You will need to create a Twitter Application.
-
-= Creating a Twitter Application =
+3. Place the "WP Twitter Tweets" Widget on your sidebar and add twitter username with API details of Twitter.
 
 
-To find Oauth Keys , go to https://dev.twitter.com/ and sign in.
+= Rate Us / Feedback =
 
-Once you have logged in successfully, hover over your name in the top right corner, and click "My Applications," then "Create a New Application."
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
 
-Enter a unique name , a description , and your site's URL. You can leave the Callback URL empty as it is not used for this implementation.
+Want More?
 
-You will be taken to a new screen, there's one more step then you can copy all the details into correct fields of the Widget and be on your way.
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
+== Frequently Asked Questions ==
 
-Click the "Create my Access Token" button. This is a shortcut to authenticate your own account with your application .
+= How to create a Twitter Application =
 
-Now click the Details Tab as all the information you need is presented here so you can just copy the required information into the exact corresponding inputs fields of the Widget.
+1. Visit the Twitter Developers Site: The first thing you need to do is head on down to dev.twitter.com. In order to create an account, all you need to do is click on the “Sign In” link at the top right.
 
-= The Widget Options =
+2. Sign in with your Twitter Account: Next, sign in with the Twitter account you want to associate with your app. You do have a Twitter account don’t you?!
 
-Fill in your details, from the Twitter Application details (as described below).
+3. Go to “My Applications”: Once you’re logged in, click on the downwards arrow to the right of your Twitter image and select “My Applications”. This is where all your registered Twitter apps will appear.
 
-* You can select the Title of the Widget as you like.
-* Enter your Twitter username (without the @) just the name.
-* How many Tweets to display
-* The time in minutes between updates (per the API requirement) this should be 5 but if the API changes you can alter it here.
-* Consumer Key: Under the *OAuth settings* heading
-* Consumer Secret: Under the *OAuth settings* heading
-* Access Token: Under the *Your access token* heading
-* Access Token Secret: Under the *Your access token* heading
-* Choose if you want the @replies included or not
-* Avatar: Your image or logo as displayed on Twitter show on/off
-* Avatar: Apply Border radius to your avatar image and also set the Avatar size.
-* Display Tweets time in Twitter style , choose to display the 'ago' or not
-* Show Twitter intents for 'Reply', 'Retweet' and 'Favourite'
-* Style the icons to your display with different colors.
-* Click Save
+4. Create a New Application: If you are new to the Developers site you won’t see any applications registered. Either way, it’s time to create our first application. To do this, click on the big “Create a new application” button.
 
-Enjoy!
+5. Fill in your Application Details: It’s been easy so far, but this screen often makes people confused. Don’t worry, it’s a lot easier than you think. First of all you need to give your app a unique name (one that no one else has used for their Twitter app). Since we’re going to be an creating app for personal use and not one that other people can register and use, just put your domain name in or perhaps even your name. You don’t have to worry much about the description– you can change this later. I’ve put “a set of Twitter tools for personal use”.
+
+Put your website in the website field– don’t worry that it isn’t (as Twitter ask) your application’s publicly accessible home page. However, this website will be where your app is hosted.
+
+For now ignore the Callback URL field. If you are allowing users to log into your app to authenticate themselves, you’d enter the URL where they would be returned after they’ve given permission to Twitter to use your app.
+
+Once you’ve done this, make sure you’ve read the “Developer Rules Of The Road” blurb, check the “Yes, I agree” box, fill in the CAPTCHA (don’t you just love them) and click the “create your Twitter Application” button. Hurrah!
+
+6. Create Your Access Token.
+
+7. Make a note of your OAuth Settings.
 
 == Changelog ==
 
