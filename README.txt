@@ -74,6 +74,14 @@ Once you’ve done this, make sure you’ve read the “Developer Rules Of The R
 
 7. Make a note of your OAuth Settings.
 
+== Screenshots ==
+
+1. WP Twitter Feeds plugin installed and appears in the plufins menu.
+2. WP Twitter Feeds widget under Appearence->Widgets.
+3. WP Twitter Feeds widget under Appearence->Widgets.
+4. WP Twitter Feeds widget under Appearence->Widgets.
+5. WP Twitter Feeds widget under Appearence->Widgets.
+
 == Changelog ==
 
 = 1.0 =
