@@ -43,13 +43,6 @@ Installation consists of following steps:
 3. Place the "WP Twitter Tweets" Widget on your sidebar and add twitter username with API details of Twitter.
 
 
-= Rate Us / Feedback =
-
-Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
-
-Want More?
-
-If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 == Frequently Asked Questions ==
 
 = How to create a Twitter Application =
@@ -67,6 +60,15 @@ If You Want more functionality or some modifications, just drop us a line what y
 6. Create Your Access Token.
 
 7. Make a note of your OAuth Settings.
+
+
+= Rate Us / Feedback =
+
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
+
+Want More?
+
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
 == Screenshots ==
 
