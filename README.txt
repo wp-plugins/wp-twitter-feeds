@@ -71,7 +71,7 @@ Installation consists of following steps:
 
 == Screenshots ==
 
-1. WP Twitter Feeds plugin installed and appears in the plufins menu.
+1. WP Twitter Feeds plugin installed and appears in the plugins menu.
 2. WP Twitter Feeds widget under Appearence->Widgets.
 3. WP Twitter Feeds widget under Appearence->Widgets.
 4. WP Twitter Feeds widget under Appearence->Widgets.
