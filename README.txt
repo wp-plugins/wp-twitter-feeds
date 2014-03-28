@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: vivacityinfotech.jaipur
-Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter widget,live tweets, live twitter tweets, tweets, twitter, twitter time line, twitter user tweets,  twitter 1.1, twitter api
+Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter widget,live tweets, live twitter feeds, tweets, feeds, twitter time line, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
@@ -15,6 +15,15 @@ Now you don`t need to copy and paste the code from twitter with your settings an
 By option page, you can define the duration of fade effect, the number of tweet to see and other things.
 
 The "WP Twitter Feeds" Widget will never require your Twitter password, because it based on Open Authentication (OAuth) keys and secrets, that you will get by creating your application at Twitter. It gets all your required data from API. Incase you change your password, you won’t need to update your Widget in your Blog.
+
+
+= Rate Us / Feedback =
+
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
+
+=Want More?=
+
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
 
 = Features =
@@ -59,15 +68,6 @@ Installation consists of following steps:
 6. Create Your Access Token.
 
 7. Make a note of your OAuth Settings.
-
-
-= Rate Us / Feedback =
-
-Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
-
-Want More?
-
-If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
 == Screenshots ==
 
