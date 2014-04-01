@@ -87,4 +87,3 @@ font-weight:bold;
 				    <label for="<?php echo $this->get_field_id( 'disp_scr_name' ); ?>">Show Twitter Screen Name</label>
 				</p>
 			</div>
-

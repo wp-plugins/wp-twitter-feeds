@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
 		if(userInput == '') {
 			$('.user-validator')
 				.removeClass('user-validator-valid user-validator-invalid')
-				.val( defaultValue );
+				.html( defaultValue );
 			
 			return; 
 		}
