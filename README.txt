@@ -4,7 +4,9 @@ Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpre
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
-Stable Version: 1.1
+Stable tag: 1.1
+
+
 WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
 
 == Description ==
