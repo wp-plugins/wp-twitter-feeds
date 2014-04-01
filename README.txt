@@ -16,18 +16,7 @@ By option page, you can define the duration of fade effect, the number of tweet 
 
 The "WP Twitter Feeds" Widget will never require your Twitter password, because it based on Open Authentication (OAuth) keys and secrets, that you will get by creating your application at Twitter. It gets all your required data from API. Incase you change your password, you won’t need to update your Widget in your Blog.
 
-
-= Rate Us / Feedback =
-
-Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
-
-If you like the plugin please [Donate here](http://tinyurl.com/owxtkmt). 
-
-= Want More? =
-
-If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
-
-= Features =
+= Plugin Features =
 
     *Easy install
     *Very easy to configure.
@@ -39,6 +28,19 @@ If You Want more functionality or some modifications, just drop us a line what y
     *Set maximum number of tweets to display
     *Turn on/off displaying avatar
     *Supports v1.1 of the Twitter API
+
+
+= Rate Us / Feedback =
+
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
+
+If you like the plugin please [Donate here](http://tinyurl.com/owxtkmt). 
+
+= Want More? =
+
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
+
+
 
 == Available Languages ==
 
