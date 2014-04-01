@@ -239,7 +239,7 @@
 			}
 			if($tweets) : ?>
 			    <?php foreach($tweets as $t) : ?>
-			        <li<?php echo ($showAvatar) ? ' class="tweets_avatar"':""; ?>>
+			        <li class="tweets_avatar">
 			        	<?php
 			        	echo '<div class="tweet_wrap"><div class="wdtf-user-card ltr">';
 			        		if ($showAvatar){
