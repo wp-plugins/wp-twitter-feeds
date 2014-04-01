@@ -84,3 +84,8 @@ Installation consists of following steps:
 
 = 1.0 =
 * Initial release
+
+= 1.1 =
+* Improved Fornt-End UI design.
+* Boxed layout for tweets.
+* Improved Twitter username validation in the widget.

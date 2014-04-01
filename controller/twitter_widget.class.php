@@ -108,7 +108,7 @@
 		add_action('admin_enqueue_scripts', array(&$this, 'wpltf_enqueue_js'));
 		if(!is_admin())
 			add_action( 'wp_enqueue_scripts', array( &$this, 'wpltf_register_styles' ) );
-		$widget_data = array('classname' => 'wptt_TwitterTweets', 'description' => 'Displays latest tweets from your Twitter account using Twitter oAuth API 1.1' );
+		$widget_data = array('classname' => 'wptt_TwitterTweets', 'description' => 'A simple widget which lets you add your latest tweets in just a few clicks on your website.' );
 		$this->WP_Widget('wptt_TwitterTweets', 'WP Twitter Feeds', $widget_data);
 	}
 	
@@ -142,10 +142,13 @@
 		$wpltf_wdgt_border_rad 		= isset( $instance['border_rad'] ) ? $instance['border_rad'] : false;
 		if (!empty($wpltf_wdgt_title))
 			echo $before_title . $wpltf_wdgt_title . $after_title;
-
-		?>
-
-			<ul class="tweets">
+		if($wpltf_wdgt_consumerKey=='' || $wpltf_wdgt_consumerSecret ==''|| $wpltf_wdgt_accessTokenSecret=='' || $wpltf_wdgt_accessToken=='' )
+		{
+			echo '<div class="isa_error">Bad Authentication data.<br/>Please enter valid API Keys.</div>';
+		}
+		else
+		{
+?>			<ul class="fetched_tweets">
 			<?php
 			
 			$tweets_count 			= $wpltf_wdgt_tweets_cnt; 		
@@ -177,7 +180,7 @@
 				$accessTokenSecret
 			);
 			$totalToFetch = ($replies_excl) ? max(50, $tweets_count * 3) : $tweets_count;
-
+			
 			$fetchedTweets = $api_call->get(
 				'statuses/user_timeline',
 				array(
@@ -186,7 +189,7 @@
 					'replies_excl' => $replies_excl
 				)
 			);
-
+			
 			if($api_call->http_code != 200) :
 				$tweets = get_option($backupName);
 
@@ -207,6 +210,8 @@
 			    	$tweets[] = array(
 			    		'text' => $text,
 			    		'scr_name'=>$screen_name,
+			    		'favourite_count'=>$tweet->favorite_count,
+			    		'retweet_count'=>$tweet->retweet_count,
 			    		'name' => $name,
 			    		'permalink' => $permalink,
 			    		'image' => $image,
@@ -234,7 +239,7 @@
 			}
 			if($tweets) : ?>
 			    <?php foreach($tweets as $t) : ?>
-			        <li<?php echo ($showAvatar) ? ' class="avatar"':""; ?>>
+			        <li<?php echo ($showAvatar) ? ' class="tweets_avatar"':""; ?>>
 			        	<?php
 			        	echo '<div class="tweet_wrap"><div class="wdtf-user-card ltr">';
 			        		if ($showAvatar){
@@ -260,6 +265,7 @@
 			        	<?php echo $t['text']; ?>
 			        	</div>
 			            <br/>
+			            <div class="clear"></div>
 			            <div class="times">
 			            <em>
 			            
@@ -280,18 +286,38 @@
 			            </em>
 			            </div>
 						<?php if($twitterIntents == "true"){
-						?>
-						<div class="tweets-intent-data">
-							<a href="http://twitter.com/intent/tweet?in_reply_to=<?php echo $t['tweet_id']; ?>" data-lang="en" class="in-reply-to" title="Reply" target="_blank">
-								<span aria-hidden="true" data-icon="&#xf079;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span>
-								</a>
-							<a href="http://twitter.com/intent/retweet?tweet_id=<?php echo $t['tweet_id']; ?>" data-lang="en" class="retweet" title="Retweet" target="_blank">
-								<span aria-hidden="true" data-icon="&#xf112;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span>
-								</a>
-							<a href="http://twitter.com/intent/favorite?tweet_id=<?php echo $t['tweet_id']; ?>" data-lang="en" class="favorite" title="Favorite" target="_blank">
-								<span aria-hidden="true" data-icon="&#xf005;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span>
-								</a>
-						</div>
+						?>       
+<div class="tweets-intent-data">
+<?php if($t['favourite_count']!=0 || $t['retweet_count']!=0){?>
+<span class="stats-narrow customisable-border"><span class="stats" data-scribe="component:stats">
+ <?php if($t['retweet_count']!=0)
+	{?>
+  <a href="https://twitter.com/<?php echo $screen_name; ?>/statuses/<?php echo $t['tweet_id']; ?>" title="View Tweet on Twitter" data-scribe="element:favorite_count" target="_blank">
+    <span class="stats-favorites">
+      <strong><?php echo $t['retweet_count'];?></strong> retweet<?php if($t['retweet_count']>1)echo's';?>
+    </span>
+  </a>
+  <?php } ?>
+<?php if($t['favourite_count']!=0)
+	{?>
+  <a href="https://twitter.com/<?php echo $screen_name; ?>/statuses/<?php echo $t['tweet_id']; ?>" title="View Tweet on Twitter" data-scribe="element:favorite_count" target="_blank">
+    <span class="stats-favorites">
+      <strong><?php echo $t['favourite_count'];?></strong> Favorite<?php if($t['favourite_count']>1)echo's';?>
+    </span>
+  </a>
+  <?php }?>
+  
+</span>
+</span>
+<div class="clear"></div>
+<div class="seperator_wpltf"></div>
+<?php }?>
+      <ul class="tweet-actions " role="menu" >
+  <li><a href="http://twitter.com/intent/tweet?in_reply_to=<?php echo $t['tweet_id']; ?>" data-lang="en" class="in-reply-to" title="Reply" target="_blank"><span aria-hidden="true" data-icon="&#xf079;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span></a></li>
+  <li><a href="http://twitter.com/intent/retweet?tweet_id=<?php echo $t['tweet_id']; ?>" data-lang="en" class="retweet" title="Retweet" target="_blank"><span aria-hidden="true" data-icon="&#xf112;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span></a></li>
+  <li><a href="http://twitter.com/intent/favorite?tweet_id=<?php echo $t['tweet_id']; ?>" data-lang="en" class="favorite" title="Favorite" target="_blank"><span aria-hidden="true" data-icon="&#xf005;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span></a></li>
+</ul>
+    </div>
 						<?php } ?>
 						<div class="clear"></div>
 </div><div class="clear"></div>
@@ -303,6 +329,7 @@
 			<?php endif; ?>
 			</ul>
 			<?php
+		}
 			echo $after_widget;
 		}
 

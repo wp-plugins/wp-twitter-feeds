@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
 			
 			return; 
 		}
-		$('.user-validator').val('checking...');
+		$('.user-validator').html('checking...');
 
     	timer = setTimeout(function() {
     		validateScreenName( userInput );
@@ -46,9 +46,9 @@ jQuery(document).ready(function ($) {
 	
 	function setValidatorTo( obj ) {
 		$('.user-validator')
-			.val(obj.data)
-			.removeClass('user-validator-valid user-validator-invalid')
-			.addClass(obj.class);
+			.html(obj.data)
+			.removeClass('user-validator-valid user-validator-invalid');
+		$('.twitter_user_name').removeClass('user-validator-valid user-validator-invalid').addClass(obj.class);
 	}
 	
 	function start() {

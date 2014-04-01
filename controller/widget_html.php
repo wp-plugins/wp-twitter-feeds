@@ -1,11 +1,19 @@
+<?php $ok_url=plugins_url( '../images/rsz_11button_ok.png',__FILE__);
+$cancel_url=plugins_url( '../images/rsz_1onebit_33.png',__FILE__);?>
 <style>input.user-validator-valid {
-background-color: #99FFAC;
+background-color: #CFFAD7;
+background-image:url('<?php echo $ok_url?>');
+background-position:right;
+background-repeat:no-repeat;
 color: #2C823C;
 font-weight:bold;
 }
 input.user-validator-invalid {
-background-color: #ff9988;
+background-color: #FCCDC5;
+background-image:url('<?php echo $cancel_url?>');
+background-position:right;
 color: #660011;
+background-repeat:no-repeat;
 font-weight:bold;
 }
 </style>
@@ -14,7 +22,7 @@ font-weight:bold;
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('name'); ?>">Twitter User Name: <input class="widefat twitter_user_name" id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" type="text" value="<?php echo esc_attr($name); ?>" /></label>
-			<input type="text" disabled="disabled" value="Start entering your user name" class="widefat user-validator">
+			<span class="widefat user-validator">Start entering your user name</span>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id('store_time'); ?>">Tweets Cache Time (in minutes): <input class="widefat" id="<?php echo $this->get_field_id('store_time'); ?>" name="<?php echo $this->get_field_name('store_time'); ?>" type="text" value="<?php echo esc_attr($timeto_store); ?>" /></label>
@@ -79,3 +87,4 @@ font-weight:bold;
 				    <label for="<?php echo $this->get_field_id( 'disp_scr_name' ); ?>">Show Twitter Screen Name</label>
 				</p>
 			</div>
+
