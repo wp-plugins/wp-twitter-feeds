@@ -1,6 +1,7 @@
 === Plugin Name ===
 Contributors: vivacityinfotech.jaipur
-Tags:  twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter widget,live tweets, live twitter feeds, tweets, feeds, twitter time line, twitter user tweets,  twitter 1.1, twitter api
+Donate link: http://tinyurl.com/owxtkmt
+Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter feeds widget,live tweets, live twitter feeds, tweets, feeds, wp twitter feeds plugin, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
