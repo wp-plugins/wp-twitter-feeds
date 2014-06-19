@@ -86,4 +86,18 @@ font-weight:bold;
 				    <input class="checkbox" type="checkbox" <?php checked( (isset( $instance['disp_scr_name']) && ($instance['disp_scr_name'] == "true") ), true ); ?> id="<?php echo $this->get_field_id( 'disp_scr_name' ); ?>" name="<?php echo $this->get_field_name( 'disp_scr_name' ); ?>" value="true" />
 				    <label for="<?php echo $this->get_field_id( 'disp_scr_name' ); ?>">Show Twitter Screen Name</label>
 				</p>
+				<p>
+				    <label for="<?php echo $this->get_field_id( 'tweet_border' ); ?>">Show Twitter Widget Border:</label><br/>
+					<select name="<?php echo $this->get_field_name( 'tweet_border' ); ?>" id="<?php echo $this->get_field_id( 'tweet_border' ); ?>" style="width: 100%;">
+					<option value="true" <?php if(isset($tweet_border) && $tweet_border=='true'){echo 'selected';} ?>>Yes</option>
+					<option value="false" <?php if(isset($tweet_border) && $tweet_border=='false'){echo 'selected';} ?>>No</option>
+					</select>
+				</p>
+				<p>
+				<label for="<?php echo $this->get_field_id( 'tweet_theme' ); ?>">Twitter Widget Theme:</label><br/>
+					<select name="<?php echo $this->get_field_name( 'tweet_theme' ); ?>" id="<?php echo $this->get_field_id( 'tweet_theme' ); ?>" style="width: 100%;">
+					<option value="light" <?php if(isset($tweet_theme) && $tweet_theme=='light'){echo 'selected';} ?>>Light</option>
+					<option value="dark" <?php if(isset($tweet_theme) && $tweet_theme=='dark'){echo 'selected';} ?>>Dark</option>
+					</select>
+				</p>
 			</div>

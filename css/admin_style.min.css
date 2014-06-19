@@ -8,16 +8,19 @@ width:100%;
 margin-bottom: 5px;
 float: left;
 }
-.fetched_tweets > li{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187);
-border-width: 1px;
-border-style: solid;
+.fetched_tweets > li{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
 box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px;}
-.tweet_data{float:left;font: 16px/20px Georgia,"Times New Roman",Palatino,serif;
+
+
+.tweet_data{float:left;
+font: 16px/20px Georgia,"Times New Roman",Palatino,serif;
 line-height: 20px;}
 
-.fetched_tweets .tweets_avatar .tweet_data a{color: #0084B4;text-decoration:none;
+.fetched_tweets .tweets_avatar .tweet_data a{text-decoration:none;
 }
-.tweets-intent-data{width:100%;border-top:1px solid #e8e8e8;}
+.light .tweets-intent-data{width:100%;border-top:1px solid #e8e8e8;}
+.dark .tweets-intent-data{width:100%;border-top: 1px solid #444;}
 .tweets-intent-data a{text-decoration:none;}
 .tweets-intent-data li{
 display: inline-block;
@@ -32,6 +35,8 @@ display:block;
 margin-left:0px;
 margin-top: 0px;}
 .seperator_wpltf{clear:left;border-top:1px solid #e8e8e8;margin:3px auto;}
+.light .seperator_wpltf{border-top:1px solid #e8e8e8;}
+.dark .seperator_wpltf{border-top:1px solid #444;}
 .fetched_tweets .tweets_avatar .tweet_data a:hover{text-decoration: underline;}
 div.wdtf-screen-name {
 margin-left: 4px;float: left;
@@ -40,15 +45,18 @@ width:68%;
 line-height: 18px;
 }
 .clear{clear:both;}
-.times a,.wdtf-screen-name a,.stats a{color:#999999 !important;text-decoration:none;}
+ul.light li.tweets_avatar .times a,ul.light li.tweets_avatar .wdtf-screen-name a,ul.light li.tweets_avatar .stats a{color:#999999 ;
+text-decoration:none;}
+ul.dark li.tweets_avatar .times a,ul.dark li.tweets_avatar .wdtf-screen-name a,ul.dark li.tweets_avatar .stats a{color:#a0a0a0 ;
+text-decoration:none;}
 .times a:hover,.wdtf-screen-name a:hover,.stats a:hover{text-decoration: underline;}
 .stats-favorites{text-transform: uppercase;font-size: 11px;;}
 span.stats-narrow .stats{display:block;}
 span.stats-narrow .stats a{display:block; width:45%;float:left;}
 li.tweets_avatar{padding: 8px 8px 0;
-background: #fff;
-border-radius: 5px;color: #000;}
-div.wdtf-screen-name span.screen_name{font-weight:bold;}
+border-radius: 5px;}
+.light div.wdtf-screen-name span.screen_name{font-weight:bold;}
+.dark div.wdtf-screen-name span.screen_name{font-weight:bold;color: #cfcfcf;}
 div.times{float:left;}
 .isa_info, .isa_success, .isa_warning, .isa_error {
     border: 1px solid;
@@ -75,4 +83,18 @@ border-radius:.5em;
 .isa_error {
     color: #D8000C;
     background-color: #FFBABA;
+}
+ul.light li.tweets_avatar {
+background: #fff;
+color: #000;
+}
+ul.dark li.tweets_avatar {
+background: #333;
+color: #fff;
+}
+.fetched_tweets.light .tweets_avatar .tweet_data a {
+color: #0084B4;
+}
+.fetched_tweets.dark .tweets_avatar .tweet_data a {
+color: #87c2ed;
 }
