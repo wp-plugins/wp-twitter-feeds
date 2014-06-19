@@ -21,6 +21,8 @@
 		$color_intents 		= $instance['intentColor'];
 		$showAvatar 		= $instance['showAvatar'];
 		$border_rad_avatar 		= $instance['border_rad'];
+		$tweet_border 		= $instance['tweet_border'];
+		$tweet_theme 		= $instance['tweet_theme'];
 		if (!in_array('curl', get_loaded_extensions())) {
 			echo '<p style="background-color:pink;padding:10px;border:1px solid red;"><strong>cURL is not installed!</strong></p>';
 		}
@@ -32,6 +34,8 @@
 				'title' 				=> 'Latest Tweets'
 				, 'name' 				=> ''
 				, 'tweets_cnt' 			=> 3
+				, 'tweet_theme' 		=> 'light'
+				, 'tweet_border' 		=> 'true'
 				, 'store_time' 			=> 4
 				, 'replies_excl'		=> true
 				, 'disp_scr_name'	=> false
@@ -102,6 +106,8 @@
 		$instance['timeRef'] 			= $new_instance['timeRef'];
 		$instance['showAvatar'] 		= $new_instance['showAvatar'];
 		$instance['border_rad'] 		= $new_instance['border_rad'];
+		$instance['tweet_border'] 		= $new_instance['tweet_border'];
+		$instance['tweet_theme'] 		= $new_instance['tweet_theme'];
 		return $instance;
 	}
 	function __construct()  {
@@ -140,6 +146,8 @@
 		$wpltf_wdgt_intentColor			= $instance['intentColor'];
 		$wpltf_wdgt_showAvatar 			= isset( $instance['showAvatar'] ) ? $instance['showAvatar'] : false;
 		$wpltf_wdgt_border_rad 		= isset( $instance['border_rad'] ) ? $instance['border_rad'] : false;
+		$wpltf_wdgt_tewwt_border 		= isset( $instance['tweet_border'] ) ? $instance['tweet_border'] : 'false';
+		$wpltf_wdgt_tweet_theme 		= isset( $instance['tweet_theme'] ) ? $instance['tweet_theme'] : 'light';
 		if (!empty($wpltf_wdgt_title))
 			echo $before_title . $wpltf_wdgt_title . $after_title;
 		if($wpltf_wdgt_consumerKey=='' || $wpltf_wdgt_consumerSecret ==''|| $wpltf_wdgt_accessTokenSecret=='' || $wpltf_wdgt_accessToken=='' )
@@ -148,7 +156,21 @@
 		}
 		else
 		{
-?>			<ul class="fetched_tweets">
+			$class='light';
+			if(isset($wpltf_wdgt_tweet_theme) && $wpltf_wdgt_tweet_theme=='dark')
+				$class='dark';
+			if(isset($wpltf_wdgt_tewwt_border) && $wpltf_wdgt_tewwt_border=='true')
+			{
+				echo '<style>
+				.fetched_tweets.light > li{border-color: rgb(238, 238, 238) rgb(221, 221, 221) rgb(187, 187, 187);
+				border-width: 1px;
+				border-style: solid;}
+				.fetched_tweets.dark > li{
+				border-color: #444;
+				border-width: 1px;
+				border-style: solid;}</style>';
+			}
+?>			<ul class="fetched_tweets <?php echo $class;?>">
 			<?php
 			
 			$tweets_count 			= $wpltf_wdgt_tweets_cnt; 		

@@ -85,6 +85,10 @@ Installation consists of following steps:
 
 == Changelog ==
 
+= 1.3 =
+* Added the feature to change tweets theme.
+* Added the option to show/hide border arround the tweets.
+
 = 1.2 =
 * Improved Fornt-End UI design.
 
