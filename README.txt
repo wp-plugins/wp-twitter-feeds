@@ -3,7 +3,7 @@ Contributors: vivacityinfotech.jaipur
 Donate link: http://tinyurl.com/owxtkmt
 Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter feeds widget,live tweets, live twitter feeds, tweets, feeds, wp twitter feeds plugin, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
-Tested up to: 3.8
+Tested up to: 3.9.1
 License: GPLv2 or later
 Stable tag: 1.3
 
