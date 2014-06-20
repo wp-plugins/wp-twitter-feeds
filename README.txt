@@ -82,6 +82,8 @@ Installation consists of following steps:
 3. WP Twitter Feeds widget under Appearence->Widgets.
 4. WP Twitter Feeds widget under Appearence->Widgets.
 5. WP Twitter Feeds widget under Appearence->Widgets.
+6. WP Twitter Feeds widget on front End (Light Theme).
+7. WP Twitter Feeds widget on front End (Dark Theme).
 
 == Changelog ==
 
