@@ -26,7 +26,7 @@
 		if (!in_array('curl', get_loaded_extensions())) {
 			echo '<p style="background-color:pink;padding:10px;border:1px solid red;"><strong>cURL is not installed!</strong></p>';
 		}
-		require_once('widget_html.php');
+		include('widget_html.php');
 	}
 	function get_defaults()
 	{
