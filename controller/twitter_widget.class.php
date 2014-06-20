@@ -26,7 +26,7 @@
 		if (!in_array('curl', get_loaded_extensions())) {
 			echo '<p style="background-color:pink;padding:10px;border:1px solid red;"><strong>cURL is not installed!</strong></p>';
 		}
-		include('widget_html.php');
+		require_once('widget_html.php');
 	}
 	function get_defaults()
 	{
@@ -193,7 +193,7 @@
 			$transName = 'list-tweets-'.$name; 
 			$backupName = $transName . '-backup'; 
 			if(false === ($tweets = get_transient($transName) ) ) :
-			include 'twitteroauth/twitteroauth.php';
+			require_once 'twitteroauth/twitteroauth.php';
 
 			$api_call = new TwitterOAuth(
 				$consumerKey,   		
@@ -245,19 +245,22 @@
 				update_option($backupName, $tweets);
 				endif;
 			endif;	
-			function twitter_time_diff( $from, $to = '' ) {
-			    $diff = human_time_diff($from,$to);
-			    $replace = array(
-			        ' hour' => 'h',
-			        ' hours' => 'h',
-			        ' day' => 'd',
-			        ' days' => 'd',
-			        ' minute' => 'm',
-			        ' minutes' => 'm',
-			        ' second' => 's',
-			        ' seconds' => 's',
-			    );
-			    return strtr($diff,$replace);
+			if(!function_exists('twitter_time_diff'))
+			{
+				function twitter_time_diff( $from, $to = '' ) {
+				    $diff = human_time_diff($from,$to);
+				    $replace = array(
+				        ' hour' => 'h',
+				        ' hours' => 'h',
+				        ' day' => 'd',
+				        ' days' => 'd',
+				        ' minute' => 'm',
+				        ' minutes' => 'm',
+				        ' second' => 's',
+				        ' seconds' => 's',
+				    );
+				    return strtr($diff,$replace);
+				}
 			}
 			if($tweets) : ?>
 			    <?php foreach($tweets as $t) : ?>
