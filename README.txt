@@ -24,7 +24,7 @@ The "WP Twitter Feeds" Widget will never require your Twitter password, because 
     *Easy install
     *Very easy to configure.
     *Display Tweets with a Widget.
-    *You can choose to show a profile image, border color and much more with your Tweets.
+    *Choose to show a profile image, Tweets border, Tweets theme and much more.
     *Multiple instance so you can use Twitter widget multiple places.
     *Different color Options.
     *Lightweight and loading fast
