@@ -37,7 +37,7 @@ The "WP Twitter Feeds" Widget will never require your Twitter password, because 
 
 Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
 
-If you like the plugin please [Donate here](http://tinyurl.com/owxtkmt). 
+If you like the plugin please [Donate here](http://bit.ly/1icl56K). 
 
 = Want More? =
 
