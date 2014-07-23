@@ -61,10 +61,17 @@ font-weight:bold;
 					<label for="<?php echo $this->get_field_id('intentColor'); ?>">Colour for Intent icons: <input class="intentColor widefat" id="<?php echo $this->get_field_id('intentColor'); ?>" name="<?php echo $this->get_field_name('intentColor'); ?>" type="text" value="<?php echo esc_attr($color_intents); ?>" /></label>
 					<div id="colorpicker"></div>
 				</p>
+                                <p>
+                                  <label for="<?php echo $this->get_field_id( 'slide_style' ); ?>">Style:</label>
+					<select name="<?php echo $this->get_field_name( 'slide_style' ); ?>" id="<?php echo $this->get_field_id( 'slide_style' ); ?>" style="width: 100%;">
+					    <option value="list" <?php if(isset($slide_style) && $slide_style=='list'){echo 'selected';} ?>>List</option>
+					    <option value="slider" <?php if(isset($slide_style) && $slide_style=='slider'){echo 'selected';} ?>>Slider</option>
+					</select>       
+                                </p> 
 				<p>
 				    <input class="checkbox" type="checkbox" value="true" <?php checked( ( isset( $instance['border_rad']) && ($instance['showAvatar'] == "true") ), true ); ?> id="<?php echo $this->get_field_id( 'border_rad' ); ?>" name="<?php echo $this->get_field_name( 'border_rad' ); ?>" />
 				    <label for="<?php echo $this->get_field_id( 'border_rad' ); ?>">Circular Avatar image</label>
-				</p>
+				</p>  
 				<p>
 				    <input class="checkbox" type="checkbox" value="true" <?php checked( ( isset( $instance['showAvatar']) && ($instance['showAvatar'] == "true") ), true ); ?> id="<?php echo $this->get_field_id( 'showAvatar' ); ?>" name="<?php echo $this->get_field_name( 'showAvatar' ); ?>" />
 				    <label for="<?php echo $this->get_field_id( 'showAvatar' ); ?>">Display avatar image</label>
