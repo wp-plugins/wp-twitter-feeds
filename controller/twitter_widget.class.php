@@ -1,5 +1,10 @@
 <?php class wptt_TwitterTweets extends WP_Widget{
 
+		 /**
+	           * Widget IDs using Slider display
+		 */
+		static $slider_ids = array();
+
 		function form($instance){
 		$defaults=$this->get_defaults();
 		$instance 			= wp_parse_args( (array) $instance, $defaults );
@@ -19,6 +24,7 @@
 		$consumerKey 		= trim($instance['consumerKey']);
 		$intents_text = $instance['twitterIntentsText'];
 		$color_intents 		= $instance['intentColor'];
+                $slide_style		= $instance['slide_style'];
 		$showAvatar 		= $instance['showAvatar'];
 		$border_rad_avatar 		= $instance['border_rad'];
 		$tweet_border 		= $instance['tweet_border'];
@@ -51,6 +57,7 @@
 				, 'intentColor'			=> "#999999"
 				, 'showAvatar'			=> false
 				, 'border_rad'		=> false
+                                , 'slide_style'               => 'list'
 		);
 		return $data;
 	}
@@ -98,6 +105,7 @@
 		$instance['twitterIntents'] 	= $new_instance['twitterIntents'];
 		$instance['twitterIntentsText'] = $new_instance['twitterIntentsText'];
 		$instance['intentColor']		= strip_tags( $new_instance['intentColor'] );
+                $instance['slide_style']		= $new_instance['slide_style'];
 		$instance['consumerKey'] 		= trim($new_instance['consumerKey']);
 		$instance['consumerSecret'] 	= trim($new_instance['consumerSecret']);
 		$instance['accessToken'] 		= trim($new_instance['accessToken']);
@@ -144,6 +152,7 @@
 		$wpltf_wdgt_twitterIntents 		= isset( $instance['twitterIntents'] ) ? $instance['twitterIntents'] : false;
 		$wpltf_wdgt_twitterIntentsText 	= isset( $instance['twitterIntentsText'] ) ? $instance['twitterIntentsText'] : false;
 		$wpltf_wdgt_intentColor			= $instance['intentColor'];
+                $wpltf_wdgt_slide_style			= isset( $instance['slide_style'] ) ? $instance['slide_style'] : 'list';
 		$wpltf_wdgt_showAvatar 			= isset( $instance['showAvatar'] ) ? $instance['showAvatar'] : false;
 		$wpltf_wdgt_border_rad 		= isset( $instance['border_rad'] ) ? $instance['border_rad'] : false;
 		$wpltf_wdgt_tewwt_border 		= isset( $instance['tweet_border'] ) ? $instance['tweet_border'] : 'false';
@@ -170,6 +179,16 @@
 				border-width: 1px;
 				border-style: solid;}</style>';
 			}
+
+                        if(isset($wpltf_wdgt_slide_style) && $wpltf_wdgt_slide_style=='slider'){
+                              wp_enqueue_script('responsive-slides', plugins_url( '/js/responsiveslides.min.js' , dirname(__FILE__) ), array('jquery'));     
+                              self::$slider_ids[] = $widget_id;
+                              $file_path = WP_PLUGIN_DIR . '/wp-twitter-feeds/views/slider.php';
+                              add_action( 'wp_footer', array($this,'twitter_slider_script'), 90 );
+                              include($file_path);
+                        }
+                        else{
+
 ?>			<ul class="fetched_tweets <?php echo $class;?>">
 			<?php
 			
@@ -184,7 +203,8 @@
 			//$dataShowCount 		= ($wpltf_wdgt_dataShowCount != "true") ? "false" : "true";
 			$disp_screen_name	= ($wpltf_wdgt_disp_scr_name != "true") ? "false" : "true";
 			$intents_text = $wpltf_wdgt_twitterIntentsText; 
-			$color_intents 		= $wpltf_wdgt_intentColor; 
+			$color_intents 		= $wpltf_wdgt_intentColor;
+                        $slide_style 		= $wpltf_wdgt_slide_style; 
 			$cache_transient 			= $wpltf_wdgt_timeRef;
 			$alter_ago_time 			= $wpltf_wdgt_timeAgo;
 			$twitterIntents		= $wpltf_wdgt_twitterIntents;
@@ -354,9 +374,53 @@
 			<?php endif; ?>
 			</ul>
 			<?php
+                   }//else loop
 		}
 			echo $after_widget;
 		}
+
+
+        /*
+	 * Outputs Slider Javascript
+	 * Shows a single tweet at a time, fading between them.
+	 */
+	public function twitter_slider_script() {
+	    
+	    // Collect the IDs of all Widgets using the Slider display.
+	    $widget_ids = wptt_TwitterTweets::$slider_ids;
+           
+	    foreach ( $widget_ids as $widget_id ) {
+		
+	    ?>
+	    <script type="text/javascript">
+		//<![CDATA[
+		jQuery(document).ready(function() {
+		    
+		    timeout = jQuery( ".<?php echo $widget_id; ?>" ).data( "timeout" );
+		    speed = jQuery( ".<?php echo $widget_id; ?>" ).data( "speed" );
+		    
+		    jQuery( function($) {
+		        jQuery( ".<?php echo $widget_id; ?>" ).responsiveSlides({
+		            auto: true,           // Boolean: Animate automatically, true or false
+		            speed: speed,        // Integer: Speed of the transition, in milliseconds
+		            timeout: timeout,    // Integer: Time between slide transitions, in milliseconds
+		            pager: false,         // Boolean: Show pager, true or false
+		            nav: false,           // Boolean: Show navigation, true or false
+		            random: false,        // Boolean: Randomize the order of the slides, true or false
+		            pause: true           // Boolean: Pause on hover, true or false
+		        });
+		    });
+
+		});
+		//]]>
+	    </script>
+	    <?php
+	    
+	    }
+
+	}
+
+
 
 }
 

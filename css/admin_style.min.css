@@ -45,10 +45,20 @@ width:68%;
 line-height: 18px;
 }
 .clear{clear:both;}
+.fetched_tweets{
+    border: medium none;
+    list-style: none outside none;
+    margin: 0 !important;
+    outline: medium none;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
 ul.light li.tweets_avatar .times a,ul.light li.tweets_avatar .wdtf-screen-name a,ul.light li.tweets_avatar .stats a{color:#999999 !important;
-text-decoration:none;}
+text-decoration:none; width: 100%;}
 ul.dark li.tweets_avatar .times a,ul.dark li.tweets_avatar .wdtf-screen-name a,ul.dark li.tweets_avatar .stats a{color:#a0a0a0 !important;
-text-decoration:none;}
+text-decoration:none; width: 100%;}
 .times a:hover,.wdtf-screen-name a:hover,.stats a:hover{text-decoration: underline;}
 .stats-favorites{text-transform: uppercase;font-size: 11px;;}
 span.stats-narrow .stats{display:block;}

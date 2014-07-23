@@ -123,9 +123,6 @@ Log in to vote.
 
 == Changelog ==
 
-= 1.4.3 =
-* Added slider.php file.
-
 = 1.4.2 =
 * Added the option to List/Slider for the tweets. Now from the Slider option tweets can be show as a slider. A single tweet shows at a time after few second it will fade up by the next tweet.
 
