@@ -17,6 +17,9 @@ background-repeat:no-repeat;
 font-weight:bold;
 }
 </style>
+
+
+
 <p>
 			<label for="<?php echo $this->get_field_id('title'); ?>">Widget Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($widget_title); ?>" /></label>
 		</p>
@@ -58,7 +61,7 @@ font-weight:bold;
 				    <label for="<?php echo $this->get_field_id( 'twitterIntentsText' ); ?>">Hide Twitter Intents Text</label>
 				</p>
 				<p>
-					<label for="<?php echo $this->get_field_id('intentColor'); ?>">Colour for Intent icons: <input class="intentColor widefat" id="<?php echo $this->get_field_id('intentColor'); ?>" name="<?php echo $this->get_field_name('intentColor'); ?>" type="text" value="<?php echo esc_attr($color_intents); ?>" /></label>
+					<label for="<?php echo $this->get_field_id('intentColor'); ?>">Colour for Intent icons: </label><input class="intentColor widefat" id="<?php echo $this->get_field_id('intentColor'); ?>" name="<?php echo $this->get_field_name('intentColor'); ?>" type="text" value="<?php echo esc_attr($color_intents); ?>" />
 					<div id="colorpicker"></div>
 				</p>
                                 <p>
@@ -108,3 +111,4 @@ font-weight:bold;
 					</select>
 				</p>
 			</div>
+			

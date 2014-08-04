@@ -4,7 +4,7 @@ Plugin Name: WP Twitter Feeds
 Plugin URI: http://www.vivacityinfotech.net/
 Description: Displays latest tweets from your Twitter account using Twitter oAuth API 1.1.
 Author: Vivacity Infotech Pvt. Ltd.
-Version: 1.4.2
+Version: 1.4.3
 Author URI: http://www.vivacityinfotech.net/
 
 Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)

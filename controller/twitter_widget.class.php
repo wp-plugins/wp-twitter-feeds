@@ -3,6 +3,8 @@
 		 /**
 	           * Widget IDs using Slider display
 		 */
+		 
+		 var $widgetid;
 		static $slider_ids = array();
 
 		function form($instance){
@@ -77,6 +79,7 @@
 		}
 		wp_enqueue_script('admin_js', plugins_url( '/js/admin_script.js' , dirname(__FILE__) ), array('jquery'));
 		wp_enqueue_script('user_validate', plugins_url( '/js/validate.js' , dirname(__FILE__) ), array('jquery'));
+		
 	}
 	function sanitize_links($tweet) {
 		if(isset($tweet->retweeted_status)) {
@@ -134,8 +137,9 @@
 	}
 	function widget($args, $instance){
 		extract($args, EXTR_SKIP);
-
+	//	print_r($args);
 		echo $before_widget;
+		$this->widgetid=$args['widget_id'];
 		$wpltf_wdgt_title 				= empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$wpltf_wdgt_name 				= $instance['name'];
 		$wpltf_wdgt_consumerSecret 		= trim($instance['consumerSecret']);
@@ -179,17 +183,9 @@
 				border-width: 1px;
 				border-style: solid;}</style>';
 			}
+?>			
 
-                        if(isset($wpltf_wdgt_slide_style) && $wpltf_wdgt_slide_style=='slider'){
-                              wp_enqueue_script('responsive-slides', plugins_url( '/js/responsiveslides.min.js' , dirname(__FILE__) ), array('jquery'));     
-                              self::$slider_ids[] = $widget_id;
-                              $file_path = WP_PLUGIN_DIR . '/wp-twitter-feeds/views/slider.php';
-                              add_action( 'wp_footer', array($this,'twitter_slider_script'), 90 );
-                              include($file_path);
-                        }
-                        else{
-
-?>			<ul class="fetched_tweets <?php echo $class;?>">
+<ul class="fetched_tweets <?php echo $class;?>">
 			<?php
 			
 			$tweets_count 			= $wpltf_wdgt_tweets_cnt; 		
@@ -373,51 +369,50 @@
 			    <li>Waiting for twitter.com...Try reloading the page again </li>
 			<?php endif; ?>
 			</ul>
+			
 			<?php
-                   }//else loop
+			if(isset($wpltf_wdgt_slide_style) && $wpltf_wdgt_slide_style=='slider'){
+				wp_register_script('ticker_script',plugins_url( '/js/jquery.newsTicker.js' , dirname(__FILE__) )); 
+	if(!wp_script_is('ticker_script'))
+	{
+wp_print_scripts('ticker_script');		
+		
+ 	}
+				add_action('wp_footer',array($this,'add_script_footer'));
+			}
+
+       
 		}
 			echo $after_widget;
 		}
-
+		
 
         /*
 	 * Outputs Slider Javascript
 	 * Shows a single tweet at a time, fading between them.
 	 */
 	public function twitter_slider_script() {
-	    
-	    // Collect the IDs of all Widgets using the Slider display.
-	    $widget_ids = wptt_TwitterTweets::$slider_ids;
-           
-	    foreach ( $widget_ids as $widget_id ) {
+	
+}
+ function add_script_footer() { ?>	
+<?php //echo $this->widgetid; ?>
+		<script type="text/javascript">
+		jQuery(document).ready(function(){
+	 jQuery(".fetched_tweets").removeClass("light");			
+			
+			});	
+			
+			
 		
-	    ?>
-	    <script type="text/javascript">
-		//<![CDATA[
-		jQuery(document).ready(function() {
-		    
-		    timeout = jQuery( ".<?php echo $widget_id; ?>" ).data( "timeout" );
-		    speed = jQuery( ".<?php echo $widget_id; ?>" ).data( "speed" );
-		    
-		    jQuery( function($) {
-		        jQuery( ".<?php echo $widget_id; ?>" ).responsiveSlides({
-		            auto: true,           // Boolean: Animate automatically, true or false
-		            speed: speed,        // Integer: Speed of the transition, in milliseconds
-		            timeout: timeout,    // Integer: Time between slide transitions, in milliseconds
-		            pager: false,         // Boolean: Show pager, true or false
-		            nav: false,           // Boolean: Show navigation, true or false
-		            random: false,        // Boolean: Randomize the order of the slides, true or false
-		            pause: true           // Boolean: Pause on hover, true or false
-		        });
-		    });
+		var height_li= jQuery(".fetched_tweets li").height();
 
-		});
-		//]]>
-	    </script>
-	    <?php
-	    
-	    }
-
+		height_li=height_li+15;
+		var nt_example1 = jQuery('.fetched_tweets').newsTicker({
+	    row_height: height_li,
+	    max_rows: 2,
+	    duration: 10000,
+	   
+	});</script> <?php 
 	}
 
 

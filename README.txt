@@ -5,7 +5,7 @@ Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter w
 Requires at least: 3.0
 Tested up to: 3.9.1
 License: GPLv2 or later
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 
 
 WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
@@ -31,6 +31,7 @@ The "WP Twitter Feeds" Widget will never require your Twitter password, because 
     *Set maximum number of tweets to display
     *Turn on/off displaying avatar
     *Supports v1.1 of the Twitter API
+    *Slider for Tweets
 
 
 = Rate Us / Feedback =
@@ -122,9 +123,10 @@ Log in to vote.
 
 
 == Changelog ==
-
 = 1.4.3 =
-* Added slder.php file.
+* Added Tweets Slider file.
+= 1.4.3 =
+* Added slider.php file.
 
 = 1.4.2 =
 * Added the option to List/Slider for the tweets. Now from the Slider option tweets can be show as a slider. A single tweet shows at a time after few second it will fade up by the next tweet.
