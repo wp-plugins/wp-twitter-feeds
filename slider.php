@@ -1,19 +1,9 @@
 <?php
-/*
- * HTML output for the Horizontal Slider style of widget.
- */
-?>
-
-<?php
-// Prepare Classes
 $classes[] = 'slider';
 $classes[] = $widget_id;
 ?>
-
 <ul class="fetched_tweets <?php echo $class; ?> <?php echo implode(' ', $classes); ?>" data-timeout="10000" data-speed="1000" data-animation="fade">
-
     <?php
-			
 			$tweets_count 			= $wpltf_wdgt_tweets_cnt; 		
 			$name 				= $wpltf_wdgt_name;			
 			$timeto_store 			= $wpltf_wdgt_store_time; 	
