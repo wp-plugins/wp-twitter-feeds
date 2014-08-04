@@ -123,7 +123,7 @@ Log in to vote.
 
 
 == Changelog ==
-= 1.4.3 =
+= 1.4.4 =
 * Added Tweets Slider file.
 = 1.4.3 =
 * Added slider.php file.
