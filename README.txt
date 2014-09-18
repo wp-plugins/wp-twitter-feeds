@@ -3,9 +3,9 @@ Contributors: vivacityinfotech.jaipur
 Donate link: http://tinyurl.com/owxtkmt
 Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter feeds widget,live tweets, live twitter feeds, tweets, feeds, wp twitter feeds plugin, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.0
-Tested up to: 3.9.2
+Tested up to: 4.0
 License: GPLv2 or later
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 
 
 WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
@@ -123,6 +123,8 @@ Log in to vote.
 
 
 == Changelog ==
+= 1.4.6 =
+* Updated labels.
 = 1.4.5 =
 * Added jQuery Slider file.
 = 1.4.4 =
