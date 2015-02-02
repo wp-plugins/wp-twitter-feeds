@@ -5,7 +5,7 @@ Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter w
 Requires at least: 3.0
 Tested up to: 4.0
 License: GPLv2 or later
-Stable tag: 1.4.6
+Stable tag: 1.4.7
 
 
 WP Twitter Feeds - A simple widget which lets you add your latest tweets in just a few clicks on your website.
@@ -123,6 +123,8 @@ Log in to vote.
 
 
 == Changelog ==
+= 1.4.7 =
+* Added support for displaying images in feeds in both list and slider view.
 = 1.4.6 =
 * Updated labels.
 = 1.4.5 =
