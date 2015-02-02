@@ -120,7 +120,9 @@ $classes[] = $widget_id;
 			        	echo '<div class="clear"></div></div>';	
 			        	?>
 			       		<div class="tweet_data">
-			        	<?php echo $t['text']; ?>
+			        	<?php 
+			        		
+			        		//echo $t['text']; ?>
 			        	</div>
 			            <br/>
 			            <div class="clear"></div>
