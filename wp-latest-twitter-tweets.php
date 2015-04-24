@@ -6,7 +6,7 @@ Description: Displays latest tweets from your Twitter account using Twitter oAut
 Author: Vivacity Infotech Pvt. Ltd.
 Version: 1.4.7
 Author URI: http://www.vivacityinfotech.net/
-
+* Author Email: support@vivacityinfotech.net
 Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)
 
     This program is free software; you can redistribute it and/or modify
