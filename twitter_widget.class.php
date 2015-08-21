@@ -126,7 +126,7 @@
 		if(!is_admin())
 			add_action( 'wp_enqueue_scripts', array( &$this, 'wpltf_register_styles' ) );
 		$widget_data = array('classname' => 'wptt_TwitterTweets', 'description' => 'A simple widget which lets you add your latest tweets in just a few clicks on your website.' );
-		$this->WP_Widget('wptt_TwitterTweets', 'WP Twitter Feeds', $widget_data);
+		parent::__construct('wptt_TwitterTweets', 'WP Twitter Feeds', $widget_data);
 	}
 	
 	function wpltf_register_styles() {
