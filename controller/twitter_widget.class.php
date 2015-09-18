@@ -77,7 +77,7 @@
 			wp_enqueue_style( 'farbtastic' );
 			wp_enqueue_script( 'farbtastic' );
 		}
-		wp_enqueue_script('admin_js', plugins_url( '/js/admin_script.js' , dirname(__FILE__) ), array('jquery'));
+		//wp_enqueue_script('admin_js', plugins_url( '/js/admin_script.js' , dirname(__FILE__) ), array('jquery'));
 		wp_enqueue_script('user_validate', plugins_url( '/js/validate.js' , dirname(__FILE__) ), array('jquery'));
 		
 	}
@@ -125,8 +125,8 @@
 		add_action('admin_enqueue_scripts', array(&$this, 'wpltf_enqueue_js'));
 		if(!is_admin())
 			add_action( 'wp_enqueue_scripts', array( &$this, 'wpltf_register_styles' ) );
-		$widget_data = array('classname' => 'wptt_TwitterTweets', 'description' => 'A simple widget which lets you add your latest tweets in just a few clicks on your website.' );
-		$this->WP_Widget('wptt_TwitterTweets', 'WP Twitter Feeds', $widget_data);
+		$widget_data = array('classname' => 'wptt_TwitterTweets', 'description' => 'A easy widget which lets you add your latest tweets in just a few clicks on your website.' );
+		parent::__construct('wptt_TwitterTweets', 'WP Twitter Feeds', $widget_data);
 	}
 	
 	function wpltf_register_styles() {
@@ -287,8 +287,9 @@
 			        			
 			        			echo '<img ';
 			        			echo 'width="45px" height="45px"';
-			        			echo 'src="'.$t['image'].'" alt="Tweet Avatar" class="';
-		        				echo ($border_rad_avatar) ? 'circular':'';
+			        			 //echo 'src="'.$t['image'].'" alt="Tweet Avatar" class="';
+		        				echo 'src="' . str_replace('http://', '//', $t['image']) . '" alt="Tweet Avatar" class="'; 
+							echo ($border_rad_avatar) ? 'circular':'';
 			        			echo '"/>';
 			        		}
 			        		if(!isset($screen_name)){$screen_name = $name;}
