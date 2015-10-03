@@ -7,7 +7,6 @@
  *Version: 1.4.8
  *Author URI: http://www.vivacityinfotech.net/
  *Author Email: support@vivacityinfotech.net
- *Contributors: vivacityinfotech.jaipur , Planet Interactive
  */
  /* Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.net)
 

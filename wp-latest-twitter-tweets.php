@@ -7,6 +7,8 @@
  *Version: 1.4.8
  *Author URI: http://www.vivacityinfotech.net/
  *Author Email: support@vivacityinfotech.net
+ *Text Domain: wp-twitter-feeds
+ *Domain Path: /languages
  */
  /* Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.net)
 
