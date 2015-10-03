@@ -6,7 +6,7 @@
  *Author: Vivacity Infotech Pvt. Ltd.
  *Version: 1.4.8
  *Author URI: http://www.vivacityinfotech.net/
-* Author Email: support@vivacityinfotech.net
+ *Author Email: support@vivacityinfotech.net
  */
  /* Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.net)
 

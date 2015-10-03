@@ -1,5 +1,5 @@
 ﻿=== Plugin Name ===
-Contributors: vivacityinfotech.jaipur
+Contributors: vivacityinfotech.jaipur,Planet Interactive 
 Donate link: http://bit.ly/1icl56K
 Tags:  wp twitter feeds,twitter feeds, twitter timeline,twitter widget,twitter widget for wordpress,wp twitter feeds widget,live tweets, live twitter feeds, tweets, feeds, wp twitter feeds plugin, twitter user tweets,  twitter 1.1, twitter api
 Requires at least: 3.5
